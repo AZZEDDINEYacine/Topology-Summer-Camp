@@ -1,0 +1,129 @@
+\documentclass{pset}
+\usepackage{colored-theorems}
+\renewcommand{\hmwkTitle}{prerequisite problem set}
+\renewcommand{\hmwkDueDate}{30/07/2025}
+\renewcommand{\hmwkClass}{Pointset Topology}
+\renewcommand{\hmwkSummary}{}
+\renewcommand{\hmwkAuthorName}{AZZEDDINE Yacine}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\begin{problem}
+    Let $A$, $B$ and $C$ be 3 subsets of $E$. 
+    \begin{enumerate}
+        \item Prove the following relations
+        \begin{itemize}
+            \item $A\cap (B\cup C) = (A\cap B)\cup(A\cap C)$
+            \item $A\cup (B\cap C) = (A\cup B)\cap(A\cup C)$
+            \item $A\setminus (B\cup C) = (A\setminus B) \cap (A\setminus C)$
+        \end{itemize}
+        \begin{definition}
+            Let $I$ be an indexing set and let $(A_i)_{i\in I}$ be a set of subsets of $E$. Define the following notation
+            \begin{align*}
+                \bigcup_{i\in I} A_i &= \{\, a \mid \exists i\in I \text{ such that } a\in A_i \,\}\\
+                \bigcap_{i\in I} A_i &= \{\, a \mid \forall i\in I,\ a\in A_i \,\} \\
+                A^c &= E\setminus A = \{\, b\in E| b\not\in A\,\}
+            \end{align*}
+        \end{definition}
+        \item Prove
+    
+        \begin{minipage}{0.45\linewidth}
+        \[
+            \bigg(\bigcup_{i\in I} A_i\bigg)^c = \bigcap_{i\in I} A_i^c
+        \]
+        \end{minipage}
+        \hfill
+        and,
+        \hfill
+        \begin{minipage}{0.45\linewidth}
+        \[
+            \bigg(\bigcap_{i\in I} A_i\bigg)^c = \bigcup_{i\in I} A_i^c
+        \]
+        \end{minipage}
+    \end{enumerate}
+
+\end{problem}
+\begin{problem}
+    Let $E$, $F$ be two sets and let $f\colon E\longrightarrow F$ be a function. 
+    \begin{enumerate}
+        \item Prove the following relations
+        \begin{itemize}
+            \item $A_1\subset A_2\subset E \implies f(A_1)\subset f(A_2)$
+            \item $B_1\subset B_2\subset F \implies f\inv(B_1)\subset f\inv(B_2)$
+            \item $f(f\inv(B))\subset B$ \small(bonus: find an example where it's a proper subset)
+        \end{itemize}
+        \item let $(B_i)_{i\in I}$ be a family of subsets of $F$. Show that
+        
+        \begin{minipage}{0.45\linewidth}
+        \[
+            f\inv\bigg(\bigcup_{i\in I} B_i\bigg) = \bigcup_{i\in I} f\inv(B_i)
+        \]
+        \end{minipage}
+        \hfill
+        and,
+        \hfill
+        \begin{minipage}{0.45\linewidth}
+        \[
+            f\inv\bigg(\bigcap_{i\in I} B_i\bigg) = \bigcap_{i\in I} f\inv(B_i)
+        \]
+        \end{minipage}
+        \item let $(A_i)_{i\in I}$ be a family of subsets of $E$. Show that
+        
+        \begin{minipage}{0.45\linewidth}
+        \[
+            f\bigg(\bigcup_{i\in I} A_i\bigg) = \bigcup_{i\in I} f(A_i)
+        \]
+        \end{minipage}
+        \hfill
+        and,
+        \hfill
+        \begin{minipage}{0.45\linewidth}
+        \[
+            f\bigg(\bigcap_{i\in I} A_i\bigg) \subset \bigcap_{i\in I} f(A_i)
+        \]
+        \end{minipage}
+        \noindent\small{(bonus: find an example where it's a proper subset)}
+        \item \normalsize prove that $f\inv(B^c) = (f\inv(B))^c$
+    \end{enumerate}
+\end{problem}
+\begin{problem}
+    \begin{definition}
+        Let $(a_n)_{n\in\bN}$ be a sequence of real numbers and let $a\in\bR$. We say that 
+        $a_n$ converges to $a$ if $\forall\eps>0\,\exists N\in\bN$ such that $\forall n>N$, 
+        there terms $x_n$ satisfy:
+        \[\abs{a_n-a}<\eps\]
+        and we write $a_n\to a$ as $n\to\i$ or
+        \[\lim_{n\to\i} a_n = a\]
+    \end{definition}
+    \begin{definition}
+        we define also the following notation:
+        \[B(x, r) = \{\, y\in\bR\mid \abs{x-y}<r\,\}\]
+    \end{definition}
+    \begin{enumerate}
+        \item prove that if $a_n\to a$ and $a_n\to b$ then $a=b$
+        \item prove that $a_n\to a$ if and only if for all $\eps>0$, $a_n\in B(a, \eps)$ for all 
+        but finitely many $n\in\bN$. i.e. the set $\{i\in\bN|a_i\not\in B(a, \eps)\}$ is finite.
+    \end{enumerate}
+\end{problem}
+\begin{problem}
+    \begin{definition}
+        let $f\colon (a, b)\longrightarrow\bR$ be a function and let $\ell\in\bR$. Fix $x_0\in(a, b)$. We write
+        \[\lim_{x\to x_0} f(x) = \ell\] 
+        iff for all $\eps>0$ there exists a $\delta>0$ so that
+        \[\abs{x_0-x}<\delta \implies \abs{f(x)-\ell}<\eps\]
+    \end{definition}
+    \begin{definition}
+        we say that a function $f\colon (a, b) \longrightarrow \bR$ is continuous at $x_0$ iff
+        \[\lim_{x\to x_0} f(x) = f(x_0)\]
+        and we say $f$ is continuous in $(a, b)$ iff $f$ is continuous at $x$ for all $x\in (a, b)$
+    \end{definition}
+    \noindent prove that $f$ is continuous at $x_0$ if and only if for all real sequences $(x_n)_{n\in\bN}$ such that
+    \[\lim_{n\to \i} x_n = x\]
+    we have
+    \[\lim_{n\to \i} f(x_n) = f(x)\]
+\end{problem}
+\end{document}

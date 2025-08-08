@@ -1,0 +1,92 @@
+\documentclass{pset}
+\usepackage{colored-theorems}
+\renewcommand{\hmwkTitle}{1st problem set}
+\renewcommand{\hmwkDueDate}{02/08/2025}
+\renewcommand{\hmwkClass}{Pointset Topology}
+\renewcommand{\hmwkSummary}{}
+\renewcommand{\hmwkAuthorName}{AZZEDDINE Yacine}
+\renewcommand{\backgroundimg}{background1.png}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\begin{problem}
+    % for transparency, I used chatgpt to transcribe thi
+    \noindent Let \( X \) be an infinite set.
+    \begin{enumerate}[label=(\alph*)]
+        \item Show that
+        \[
+        \mathcal{T}_1 = \{ U \subseteq X : U = \varnothing \text{ or } X \setminus U \text{ is finite} \}
+        \]
+        is a topology on \( X \), called the \textit{finite complement topology}.
+        
+        \item Show that
+        \[
+        \mathcal{T}_2 = \{ U \subseteq X : U = \varnothing \text{ or } X \setminus U \text{ is countable} \}
+        \]
+        is a topology on \( X \), called the \textit{countable complement topology}.
+        
+        \item Let \( p \) be an arbitrary point in \( X \), and show that
+        \[
+        \mathcal{T}_3 = \{ U \subseteq X : U = \varnothing \text{ or } p \in U \}
+        \]
+        is a topology on \( X \), called the \textit{particular point topology}.
+        
+        \item Let \( p \) be an arbitrary point in \( X \), and show that
+        \[
+        \mathcal{T}_4 = \{ U \subseteq X : U = X \text{ or } p \notin U \}
+        \]
+        is a topology on \( X \), called the \textit{excluded point topology}.
+        
+        \item Determine whether
+        \[
+        \mathcal{T}_5 = \{ U \subseteq X : U = X \text{ or } X \setminus U \text{ is infinite} \}
+        \]
+        is a topology on \( X \).
+    \end{enumerate}
+    Bonus: 
+    \begin{enumerate}[label=(\roman*)]
+        \item Let \( X \) be any set whatsoever, and let \( \mathcal{T} = \mathcal{P}(X) \) (the \textit{power set of \( X \)}, which is the set of 
+        all subsets of \( X \)), so every subset of \( X \) is open. This is called the \textit{discrete topology on \( X \)}, and 
+        \( (X, \mathcal{T}) \) is called a \textit{discrete space}.
+        
+        \item Let \( Y \) be any set, and let \( \mathcal{T} = \{Y, \varnothing\} \). This is called the \textit{trivial topology on \( Y \)}.
+    \end{enumerate}
+    \small It is obvious that the above two are topologies so you don't have to show it. I still mentioned them here since I will be referencing them 
+    throughout the camp.
+
+    \noindent\tiny ref. Lee's ITM, exercise 2.2 + Problem 2-1
+\end{problem}
+
+\begin{problem}
+    \newcommand{\x}{\mathbf{x}}
+    \newcommand{\y}{\mathbf{y}}
+    \begin{enumerate}[label=(\alph*)]
+        \item Prove that the standard dot product on \( \bR^n \), defined by
+        \[
+        \la \x, \y \ra = \sum_{i=1}^n x_i y_i
+        \]
+        for \( \x = (x_1, \ldots, x_n) \) and \( \y = (y_1, \ldots, y_n) \), is an inner product. Specifically, verify the following 
+        properties for all \( \x, \y, \mathbf{z} \in \bR^n \) and all scalars \( \alpha \in \mathbb{R} \):
+        \begin{enumerate}
+            \item \textbf{Linearity in the first argument:} \( \la \alpha \x + \y, \mathbf{z} \ra = \alpha \la \x, \mathbf{z} \ra + \la \y, \mathbf{z} \ra \).
+            \item \textbf{Symmetry:} \( \la \x, \y \ra = \la \y, \x \ra \).
+            \item \textbf{Positive-definiteness:} \( \la \x, \x \ra \geq 0 \), with equality if and only if \( \x = \mathbf{0} \).
+        \end{enumerate}
+        \item The Euclidean norm on $\bR^n$ is defined as
+        \[\norm{\x} = \sqrt{\la \x, \x\ra}\]
+        and the Euclidean metric, as defined in lecture
+        \[d(\x, \y) = \norm{\x-\y}\]
+        Before we can prove the triangle inequality for $d$ we need to first prove the cauchy-schwarz inequality:
+        \[\abs{\la\x,\y\ra} \leq \norm{\x}\norm\y\]
+        \small Hint: expand $\norm{\x+t\y}^2$ into a polynomial in $t$. What can you say about its discriminant?
+        \item Prove that $d$ satisfies the triangle inequality.
+        \small Hint: expand $\norm{\x+\y}^2$.
+    \end{enumerate}
+    % hidden because it contains the solution
+    % \tiny ref. Hubbard and Hubbard's vector calculus, linear algebra and differential forms 5th, theorem 1.4.9
+\end{problem}
+\end{document}
