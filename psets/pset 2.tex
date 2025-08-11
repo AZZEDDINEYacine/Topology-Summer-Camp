@@ -1,11 +1,13 @@
 \documentclass{pset}
 \usepackage{colored-theorems}
-\renewcommand{\hmwkTitle}{1st problem set}
-\renewcommand{\hmwkDueDate}{02/08/2025}
+
+\renewcommand{\hmwkTitle}{2nd problem set}
+\renewcommand{\hmwkDueDate}{16/08/2025}
 \renewcommand{\hmwkClass}{Pointset Topology}
 \renewcommand{\hmwkSummary}{}
 \renewcommand{\hmwkAuthorName}{AZZEDDINE Yacine}
 \renewcommand{\backgroundimg}{background1.png}
+\WarningFilter{DuplicateLabels}{Duplicate}
 
 \begin{document}
 
@@ -13,8 +15,102 @@
 
 \pagebreak
 
-\begin{problem}
+\subsection{Topological Jargon}
+Before we continue exploring continuity, we lay out here a few definitions and general constructions that will be useful throughout your study of 
+topology. The idea of this section is to get you used to such ubiquitous constructions. Do not worry if the . For the remaining of this section, let $(X, \mcl O)$ be a topological space.
+\begin{definition}[closed sets]
+    a subset $A\subset X$ is said to be closed if $A^c$ is open.
+\end{definition}
+It is important to note that the naming scheme can be a bit misleading. Indeed, sets are not doors, they can be either open or closed or both open 
+and closed or neither at the same time
+\begin{exercise}[\skipforward]
+    Find an example of an open set, a closed set, a set which is both closed and open and a set which is neither. (you can take $X=\bR$)
+\end{exercise}
+\begin{exercise}
+    prove the following properties of closed sets:
+    \begin{enumerate}[label=\roman*.]
+        \item $X$ and $\varnothing$ are closed.
+        \item finite union of closed sets is closed.
+        \item infinite intersections of of closed sets is closed.
+    \end{enumerate}
+\end{exercise}
+Next, we will introduce two operators that will turn any arbitrary subset $A$ of $X$ into either a closed or open set: 
+\begin{definition}
+    \textbf{The closure of $A$ in $X$}
+    \[
+    \overline{A} = \bigcap \{\, B \subseteq X : B \supseteq A \ \text{and}\ B \ \text{is closed in}\ X \,\}.
+    \]
+    and \textbf{the interior of $A$ in $X$}
+    \[
+    \Int A = \bigcup \{\, C \subseteq X : C \subseteq A \ \text{and}\ C \ \text{is open in}\ X \,\}.
+    \]
+\end{definition}
+\begin{definition}
+    we say $A\subset X$ is a neighborhood of $x\in X$ if there exists an open subset $O\in \mcl O$ such that
+    \[x\in O\subset A\]
+\end{definition}
+You can think of a neighborhood as a set of points that are ``close'' to $x$. You might ask, well, technically, $X$ is a neighborhood of $x$ does 
+that mean all points are close to $x$? But the point is that you can make neighborhoods to be as ``small'' as you want. In a manner which is 
+analogous to how you can take $\epsilon>0$ to be as small as you want in the definition of continuity or convergence. (ask me about this during 
+office hours! I can expand on this a bit more.)
+\begin{exercise}[\skipforward]
+    Prove the following characterizations of closure:
+    \begin{enumerate}[label=\roman*.]
+        \item $\overline{A}$ is the smallest closed set containing $A$ (what does this mean formally?)
+        \item $x\in \overline{A}$ if and only if every neighborhood of $x$ contains a point of $A$
+    \end{enumerate}
+\end{exercise}
+\begin{exercise}[\skipforward]
+    Prove the following characterizations of the interior:
+    \begin{enumerate}[label=\roman*.]
+        \item $\Int A$ is the largest open set contained in $A$.
+        \item $x\in \Int A$ if there exists a neighborhood of $x$ which is entirely contained in $A$
+    \end{enumerate}
+\end{exercise}
+\begin{exercise}
+    prove the following are equivalent:
+    \begin{itemize}
+        \item $A$ is open in $X$
+        \item $A=\Int A$
+        \item Every point of $A$ has a neighborhood contained in $A$
+    \end{itemize}
+\end{exercise}
+\begin{exercise}
+    prove that $A$ is closed in $X$ if and only if $A=\overline A$
+\end{exercise}
+Next, we define the \emph{boundary} of some arbitrary set $A$. Roughly speaking, a boundary point is a point which ``touches'' both the ``inside'' and 
+the ``outside'' of a set. First, we define what we mean by the ``outside'' of a set
+\begin{definition}
+    We say that a point $x\in X$ is in the \textbf{exterior of $\mathbf A$} if there exists a neighborhood $N$ of $x$ such that $A\cap N = \varnothing$ and 
+    we write $x\in \Ext A$
+\end{definition}
+It is easy to see that $\Ext A\subset A^c$
+\begin{exercise}
+    prove that $\Ext A=X\setminus \overline A$
+\end{exercise}
 
-\end{problem}
+{\tiny ref. Lee ITM, section 1 of chapter 2.}
+
+\subsection{Convergence and Continuity}
+\begin{definition}[continuity]
+    Let $(X, \tau_X)$ and $(Y, \tau_Y)$ be topological spaces. A function $f\colon X\longrightarrow Y$ is said to be continuous for every open 
+    set $A\subset Y$, $f\inv(A)$ is an open subset of $X$
+\end{definition}
+Note that, in the context of general topology, the above is a \emph{definition} and not a theorem.
+\begin{definition}[convergence]
+    
+\end{definition}
+\begin{definition}[sequential continuity]
+    
+\end{definition}
+
+\begin{exercise}
+Show that the composition of continuous functions is continuous. That is, if $f\colon X\longrightarrow Y$ and 
+$g\colon Y\longrightarrow Z$ then $g \circ f\colon X\longrightarrow Z$ is continuous.
+\end{exercise}
+
+\begin{exercise}
+Now suppose $(X, d_X)$ and $(Y, d_Y)$ are metric spaces. Prove that continuity is equivalent to sequential continuity.
+\end{exercise}
 
 \end{document}
